@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
+# sentry
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -22,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-8i6d6gd+$u_5(y2fhnc6dk!fb0ydg9q2ih6^2w@*+aopwmn#d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['localhost', ]
 
@@ -107,10 +111,21 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# Sentry config
+sentry_sdk.init(
+    dsn="https://f5915ac6af7d44f1b9982f16293f6945@o375656.ingest.sentry.io/5195",
+    integrations=[DjangoIntegration()],
+
+    # If you wish to associate users to errors (assuming you are using
+    # django.contrib.auth) you may enable sending PII data.
+    send_default_pii=True
+)
+

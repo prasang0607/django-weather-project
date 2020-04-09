@@ -1,5 +1,4 @@
-from django.shortcuts import render, redirect, reverse
-from django.contrib import messages
+from django.shortcuts import render, redirect
 from .models import City
 from .forms import CityForm
 import requests
@@ -27,7 +26,7 @@ def index(request):
         else:
             err_msg = "Invalid form submission!"
 
-    cities = City.objects.all()
+    cities = City.objects.all().order_by('-time')
 
     form = CityForm()
     weather_data = list()

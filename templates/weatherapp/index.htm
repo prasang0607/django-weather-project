@@ -90,6 +90,18 @@
     </section>
 {% endif %}
 
+<section id="empty" class="section msg" style="display: none;">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-4 is-offset-4">
+                <div class="notification is-danger">
+                    Please fill out the city name.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="section">
     <div class="container">
         <div class="columns">
@@ -128,8 +140,17 @@
 
 <script>
     const add = document.querySelector("#add");
+    const city = document.querySelector(".city");
+    const empty = document.querySelector('#empty');
+
     add.addEventListener('click', () => {
-        add.classList.add("is-loading");
+
+        if (city.value.length === 0) {
+            empty.style.display = 'block';
+            city.classList.add("is-danger");
+        } else {
+            add.classList.add("is-loading");
+        }
     });
 
     function delete_notification() {
@@ -138,7 +159,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-        setTimeout(delete_notification, 3000);
+        setTimeout(delete_notification, 4000);
     });
 </script>
 </body>
