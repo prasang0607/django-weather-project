@@ -6,7 +6,7 @@ import requests
 
 
 def index(request):
-    url = r"https://api.openweathermap.org/data/2.5/weather?q={}&appid=ca6b648092fb0cc0578532726729&units=metric"
+    url = r"https://api.openweathermap.org/data/2.5/weather?q={}&appid=ca6b648092fb0cc05785327267297020&units=metric"
     err_msg = ''
     success_msg = ''
 
