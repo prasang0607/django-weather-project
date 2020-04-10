@@ -5,3 +5,4 @@ db.sqlite3-journal
 the_weather/__pycache__
 weatherapp/__pycache__
 weatherapp/migrations
+staticfiles

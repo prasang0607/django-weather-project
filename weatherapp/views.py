@@ -54,7 +54,7 @@ def index(request):
                'err_msg': err_msg,
                'success_msg': success_msg}
 
-    return render(request, 'weatherapp/index.htm', context=context)
+    return render(request, 'weatherapp/index.html', context=context)
 
 
 def delete_city(request, city):

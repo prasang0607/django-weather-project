@@ -9,17 +9,7 @@
     <title>Live Weather</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <script src="{% static 'weatherapp/main.js' %}"></script>
-
-    <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .heading {
-            font-size: 2rem;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="{% static 'weatherapp/style.css' %}">
 </head>
 
 <body>
@@ -137,31 +127,7 @@
 
 <footer class="footer">
 </footer>
-
-<script>
-    const add = document.querySelector("#add");
-    const city = document.querySelector(".city");
-    const empty = document.querySelector('#empty');
-
-    add.addEventListener('click', () => {
-
-        if (city.value.length === 0) {
-            empty.style.display = 'block';
-            city.classList.add("is-danger");
-        } else {
-            add.classList.add("is-loading");
-        }
-    });
-
-    function delete_notification() {
-        const notification = document.querySelector(".msg");
-        notification.style.display = 'none';
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        setTimeout(delete_notification, 4000);
-    });
-</script>
+<script src="{% static 'weatherapp/main.js' %}"></script>
 </body>
 
 </html>
