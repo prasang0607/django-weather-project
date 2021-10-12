@@ -10,7 +10,7 @@ django-ckeditor==5.9.0
 django-crispy-forms==1.9.0
 django-js-asset==1.2.2
 idna==2.9
-opencv-contrib-python==4.1.2.30
+opencv-contrib-python==4.2.0.32
 pycodestyle==2.5.0
 pycparser==2.20
 pytz==2019.3
